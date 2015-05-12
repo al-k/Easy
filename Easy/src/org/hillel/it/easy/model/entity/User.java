@@ -2,13 +2,10 @@ package org.hillel.it.easy.model.entity;
 
 import java.util.Date;
 
-public class User {
-	private final int id;
+public class User extends BaseEntity {
 	private String name;
 	private String position;
 	private int permition;
-	private Date lastEditedOn;
-	private User lastEditedBy;
 
 	public User addUser(String name, String position, int permition) {
 		User user = new User();
