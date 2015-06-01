@@ -9,22 +9,12 @@ public class Book extends BaseEntity {
 	private int edition;
 	private int yearOfPublication;
 	private String publisher;
-	private String language; // think about integer?
+	private String language; // enum?
 	private String briefReview;
 	private int numberOfPages;
-	private int numberOfCopies;
-	private int quantity;
+	private float price;
 	private int weight;
 	private int dimention;
-	private float price;
-
-	public Book addBook(String name, String position, int permition) {
-		Book book = new Book();
-		return book;
-	}
-
-	public boolean deleteBook(int id) {
-		return true;
-	}
+	private int quantityInStock;
 
 }

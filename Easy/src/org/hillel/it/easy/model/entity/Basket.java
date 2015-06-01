@@ -4,10 +4,8 @@ import java.awt.List;
 import java.util.Date;
 
 public class Basket extends BaseEntity {
-	private int status;
+	private int status;	// enum? active-confirmed-toGarbage
 	private List booksList; // ?
-	private float amount;
-	private int weight; // grams
-	private int dimention; // dm3
+	private User user;
 
 }
