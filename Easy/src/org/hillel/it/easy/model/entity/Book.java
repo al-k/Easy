@@ -9,7 +9,7 @@ public class Book extends BaseEntity {
 	private int edition;
 	private int yearOfPublication;
 	private String publisher;
-	private String language; // enum??
+	private Language language; // enum, is it worth?
 	private String briefReview;
 	private int numberOfPages;
 	private float price;

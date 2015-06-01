@@ -36,5 +36,9 @@ public abstract class BaseEntity {
 	public int getID() {
 		return id;
 	}
-	public abstract void setID(); // think
+	public void setID(int id) {
+		if (this.id == 0) {
+			this.id = id;
+		}
+	}
 }

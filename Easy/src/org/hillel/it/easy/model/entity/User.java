@@ -9,6 +9,6 @@ public class User extends BaseEntity {
 	private String address;
 	private String email;
 	private String password;
-	private UserRole role; //enum??, not done yet
+	private UserRole role; //enum
 
 }
