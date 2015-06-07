@@ -14,6 +14,7 @@ public class Book extends BaseEntity {
 	private int weight;
 	private int dimention;
 	private int quantityInStock;
+	
 	public String getCodeISBN() {
 		return codeISBN;
 	}

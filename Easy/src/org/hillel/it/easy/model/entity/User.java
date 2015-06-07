@@ -8,6 +8,7 @@ public class User extends BaseEntity {
 	private String email;
 	private String password;
 	private UserRole role; //enum
+	
 	public String getFirstName() {
 		return firstName;
 	}
