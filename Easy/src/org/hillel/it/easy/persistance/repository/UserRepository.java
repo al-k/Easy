@@ -4,8 +4,8 @@ import org.hillel.it.easy.model.entity.User;
 
 public interface UserRepository {
 	boolean addUser(User user);
-	User getUserByID(int id);
 	boolean updateUser(User user);
+	User getUserByEmail(String userEmail);
 	boolean deleteUser(User user);
 
 }

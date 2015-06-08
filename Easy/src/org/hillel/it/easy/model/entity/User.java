@@ -51,6 +51,19 @@ public class User extends BaseEntity {
 	public void setRole(UserRole role) {
 		this.role = role;
 	}
-
 	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+//        if (getClass() != obj.getClass())
+//            return false;
+        User user = (User) obj;
+        if (email != user.email)
+            return false;
+        return true;
+	}
+
 }
