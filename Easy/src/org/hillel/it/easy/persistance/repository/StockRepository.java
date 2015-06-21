@@ -3,7 +3,8 @@ import org.hillel.it.easy.model.entity.Stock;
 
 
 public interface StockRepository {
-	boolean saveStock(Stock stock);
+	boolean addStock(Stock stock);
+	boolean updateStock(Stock stock);
 	Stock getStockByID(int id);
 	boolean deleteStock(Stock stock);
 }
