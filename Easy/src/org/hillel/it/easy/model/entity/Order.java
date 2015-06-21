@@ -10,7 +10,7 @@ public class Order extends BaseEntity {
 	private boolean paymentConfirmed; // needed?
 	private Date payedOn;
 	private User user;
-	private int status; //enum? 
+	private OrderStatus status; // enum 
 	private String shippingCompany;
 	private String trackingNumber;
     // orderNumber or just use ID?
@@ -57,10 +57,10 @@ public class Order extends BaseEntity {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	public int getStatus() {
+	public OrderStatus getStatus() {
 		return status;
 	}
-	public void setStatus(int status) {
+	public void setStatus(OrderStatus status) {
 		this.status = status;
 	}
 	public String getShippingCompany() {

@@ -60,10 +60,16 @@ public class User extends BaseEntity {
             return false;
 //        if (getClass() != obj.getClass())
 //            return false;
+        if (!(obj instanceof User))
+        	return false;
         User user = (User) obj;
-        if (email != user.email)
-            return false;
-        return true;
+        return email == user.email;  // maybe egetEmail() ????
+	}
+	
+	@Override
+	public int hashCode() {
+		int result = 77;
+		return result = 7 * result + (email == null ? 0 : email.hashCode());
 	}
 
 }
