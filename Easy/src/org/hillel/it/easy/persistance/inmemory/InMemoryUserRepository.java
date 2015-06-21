@@ -15,8 +15,8 @@ public class InMemoryUserRepository implements UserRepository {
 		if (user == null) {
 			return false;
 		}
-		if (!isUserExist(user)) {
-			user.setID(currentID+1);
+		if (-1 == users.indexOf(user)) {
+			user.setID(currentID + 1);
 			if (users.add(user)) {
 				currentID++;
 				return true;
@@ -25,13 +25,16 @@ public class InMemoryUserRepository implements UserRepository {
 		return false;
 	}
 
-	private boolean isUserExist(User user) {
-		return getUserByEmail(user.getEmail()) == null;
-	}
-
 	@Override
 	public boolean updateUser(User user) {
-		// TODO Auto-generated method stub
+		if (user == null) {
+			return false;
+		}
+		int userIndex = users.indexOf(user);
+		if (-1 != userIndex) {
+			users.set(userIndex, user);
+			return true;
+		}
 		return false;
 	}
 
