@@ -8,7 +8,7 @@ import org.hillel.it.easy.persistance.repository.UserRepository;
 
 public class InMemoryUserRepository implements UserRepository {
 	List<User> users = new ArrayList<>();
-	private int currentID;
+	static private int currentID;
 
 	@Override
 	public boolean addUser(User user) {
