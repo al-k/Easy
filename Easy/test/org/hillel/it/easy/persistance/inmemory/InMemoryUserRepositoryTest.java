@@ -33,34 +33,34 @@ public class InMemoryUserRepositoryTest {
 		user1.setPassword("abc1");
 		user1.setRole(userRole1);
 
-		userRep.addUser(user);
-		userRep.addUser(user1);
+		userRep.add(user);
+		userRep.add(user1);
 	}
 
 	@Test
 	public void testAddUser() {
-		assertTrue(userRep.addUser(user2));
+		assertTrue(userRep.add(user2));
 	}
 
 	@Test
 	public void testUpdateUser() {
 		user.setFirstName("Al");
-		assertTrue(userRep.updateUser(user));
+		assertTrue(userRep.update(user));
 	}
 
 	@Test
 	public void testGetUserByEmail() {
-		assertEquals(user1, userRep.getUserByEmail("a1@a.com"));
+		assertEquals(user1, userRep.getByEmail("a1@a.com"));
 	}
 
 	@Test
 	public void testDeleteUser() {
-		assertTrue(userRep.deleteUser(user));
+		assertTrue(userRep.delete(user));
 	}
 
 	@Test
 	public void testDeleteUserNeg() {
-		assertTrue(!userRep.deleteUser(user2));
+		assertTrue(!userRep.delete(user2));
 	}
 
 }
