@@ -9,26 +9,25 @@ public class InMemoryBaseRepository<T extends BaseEntity> {
 	protected List<T> dBase = new ArrayList<>();
 	static private int currentID;
 
+	/**
+	 * @param item to be appended to this list
+	 * @return true if item is added, false if item already exist in List
+	 */
 	public boolean add(T item) {
-		if (item == null) {
-			return false;
-		}
-		if (-1 == dBase.indexOf(item)) {
-			item.setID(currentID + 1);
-			if (dBase.add(item)) {
-				currentID++;
-				return true;
-			}
+		if (dBase.indexOf(item) == -1) {
+			item.setID(++currentID);
+			return dBase.add(item);
 		}
 		return false;
 	}
 
+	/**
+	 * @param item replace existing element in the list 
+	 * @return false if item is in the list, true if item is replaced
+	 */
 	public boolean update(T item) {
-		if (item == null) {
-			return false;
-		}
 		int itemIndex = dBase.indexOf(item);
-		if (-1 != itemIndex) {
+		if (itemIndex != -1) {
 			dBase.set(itemIndex, item);
 			return true;
 		}
